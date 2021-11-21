@@ -21,7 +21,7 @@ namespace PhotoHub.Controllers
         }
 
         // GET: Media
-       // [Authorize]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
 
@@ -172,9 +172,9 @@ namespace PhotoHub.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var media = await _context.Media.FindAsync(id);
-            var access = await _context.Access.FindAsync(id);//added for try delete
+           // var access = await _context.Access.FindAsync(id);//added for try delete
             _context.Media.Remove(media);
-            _context.Access.Remove(access);//added for try delete
+          //  _context.Access.Remove(access);//added for try delete
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
