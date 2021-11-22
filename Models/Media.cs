@@ -23,7 +23,7 @@ namespace PhotoHub.Models
         [Required(ErrorMessage = "Please enter a valid name for the Media")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please enter a valid Url for the Media")]
+        [Required(ErrorMessage = "Please Put in a valid file for the Media")]
         public string Url { get; set; }
 
         [Required(ErrorMessage = "Please enter a valid Date for the Media")]
