@@ -80,7 +80,7 @@ namespace PhotoHub.Controllers
                 await _context.SaveChangesAsync();
 
 
-                media.Url = media.MediaFile.FileName;
+                media.BinFile = media.MediaFile.FileName;
                 Access access = new Access()
                 {
                     MediaAccessId = Guid.NewGuid(),

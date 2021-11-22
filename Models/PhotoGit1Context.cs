@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -36,7 +37,7 @@ namespace PhotoHub.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Initial Catalog=PhotoHub;Data Source=photogitserver.database.windows.net;Initial Catalog=PhotoGit1;Persist Security Info=True;User ID=franko;Password=Frans&0608");
+                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=MyDb;Trusted_Connection=True;"/*"Initial Catalog=PhotoHub;Data Source=photogitserver.database.windows.net;Initial Catalog=PhotoGit1;Persist Security Info=True;User ID=franko;Password=Frans&0608"*/);
             }
         }
 
@@ -171,7 +172,7 @@ namespace PhotoHub.Models
                     .HasMaxLength(15)
                     .IsFixedLength();
 
-                entity.Property(e => e.Url)
+                entity.Property(e => e.BinFile)
                     .HasMaxLength(900)
                     .IsFixedLength();
             });

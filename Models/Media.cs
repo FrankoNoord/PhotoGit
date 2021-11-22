@@ -24,7 +24,7 @@ namespace PhotoHub.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please Put in a valid file for the Media")]
-        public string Url { get; set; }
+        public string BinFile { get; set; }
 
         [Required(ErrorMessage = "Please enter a valid Date for the Media")]
         public DateTime? DateUpload { get; set; }
